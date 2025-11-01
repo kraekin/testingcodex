@@ -8,31 +8,37 @@ static func _ensure_action(action_name: String, events: Array[InputEvent]) -> vo
         InputMap.action_add_event(action_name, event)
 
 static func ensure_actions() -> void:
-    var actions: Dictionary = {
-        "move_up": [
+    var actions: Dictionary[String, Array[InputEvent]] = {
+        "move_up": _make_events([
             _make_key_event(Key.KEY_W),
             _make_key_event(Key.KEY_UP)
-        ],
-        "move_down": [
+        ]),
+        "move_down": _make_events([
             _make_key_event(Key.KEY_S),
             _make_key_event(Key.KEY_DOWN)
-        ],
-        "move_left": [
+        ]),
+        "move_left": _make_events([
             _make_key_event(Key.KEY_A),
             _make_key_event(Key.KEY_LEFT)
-        ],
-        "move_right": [
+        ]),
+        "move_right": _make_events([
             _make_key_event(Key.KEY_D),
             _make_key_event(Key.KEY_RIGHT)
-        ],
-        "shoot": [
+        ]),
+        "shoot": _make_events([
             _make_mouse_event(MouseButton.MOUSE_BUTTON_LEFT),
             _make_key_event(Key.KEY_SPACE)
-        ]
+        ])
     }
 
-    for action_name in actions.keys():
+    for action_name: String in actions.keys():
         _ensure_action(action_name, actions[action_name])
+
+static func _make_events(raw_events: Array) -> Array[InputEvent]:
+    var typed_events: Array[InputEvent] = []
+    for event: InputEvent in raw_events:
+        typed_events.append(event)
+    return typed_events
 
 static func _make_key_event(keycode: int) -> InputEventKey:
     var event := InputEventKey.new()
