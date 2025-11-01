@@ -19,7 +19,7 @@ func _ready() -> void:
         shape.radius = radius
         collider.shape = shape
         add_child(collider)
-    update()
+    queue_redraw()
     body_entered.connect(_on_body_entered)
 
 func configure(angle: float, custom_speed: float) -> void:

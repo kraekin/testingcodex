@@ -22,7 +22,7 @@ func _ready() -> void:
     collision_mask = 1 | 4
     _health = max_health
     emit_signal("health_changed", _health, max_health)
-    update()
+    queue_redraw()
 
 func _draw() -> void:
     draw_circle(Vector2.ZERO, body_radius, body_color)

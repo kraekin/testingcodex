@@ -16,7 +16,7 @@ func _ready() -> void:
     collision_layer = 4
     collision_mask = 1 | 2 | 8
     health = max_health
-    update()
+    queue_redraw()
 
 func _draw() -> void:
     draw_circle(Vector2.ZERO, body_radius, body_color)

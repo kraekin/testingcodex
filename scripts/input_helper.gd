@@ -10,24 +10,24 @@ static func _ensure_action(action_name: String, events: Array[InputEvent]) -> vo
 static func ensure_actions() -> void:
     var actions: Dictionary = {
         "move_up": [
-            _make_key_event(Key.W),
-            _make_key_event(Key.UP)
+            _make_key_event(Key.KEY_W),
+            _make_key_event(Key.KEY_UP)
         ],
         "move_down": [
-            _make_key_event(Key.S),
-            _make_key_event(Key.DOWN)
+            _make_key_event(Key.KEY_S),
+            _make_key_event(Key.KEY_DOWN)
         ],
         "move_left": [
-            _make_key_event(Key.A),
-            _make_key_event(Key.LEFT)
+            _make_key_event(Key.KEY_A),
+            _make_key_event(Key.KEY_LEFT)
         ],
         "move_right": [
-            _make_key_event(Key.D),
-            _make_key_event(Key.RIGHT)
+            _make_key_event(Key.KEY_D),
+            _make_key_event(Key.KEY_RIGHT)
         ],
         "shoot": [
-            _make_mouse_event(MouseButton.LEFT),
-            _make_key_event(Key.SPACE)
+            _make_mouse_event(MouseButton.MOUSE_BUTTON_LEFT),
+            _make_key_event(Key.KEY_SPACE)
         ]
     }
 

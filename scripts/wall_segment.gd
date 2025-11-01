@@ -7,7 +7,7 @@ func _ready() -> void:
     collision_layer = 1
     collision_mask = 2 | 4 | 8
     _ensure_collider()
-    update()
+    queue_redraw()
 
 func _ensure_collider() -> void:
     var collider := get_node_or_null("CollisionShape2D")
