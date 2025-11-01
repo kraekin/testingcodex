@@ -1,0 +1,12 @@
+; Engine configuration file.
+; It's best to edit this file with the Godot editor.
+
+config_version=5
+
+[application]
+config/name="Neighbors Rescue Prototype"
+run/main_scene="res://scenes/main.tscn"
+config/description="Prototype inspired by Zombies Ate My Neighbors"
+
+[rendering]
+renderer/rendering_method="forward_plus"
